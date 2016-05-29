@@ -1,26 +1,26 @@
 'use strict';
 function double_to_one(collection) {
   //在这里写入代码
-  var ar = new Array();
-			var newArr = new Array()
+			var arr = [];
+			var newArr = [];
 			for (var i = 0; i < collection.length; i++) {
-				ar[i] = collection[i];
-				if (ar[i].constructor == Number) {
-					newArr.push(ar[i])
+				arr[i] = collection[i];
+				if (arr[i].constructor == Number) {
+					newArr.push(arr[i])
 				} else {
-					for (var j = 0; j < ar[i].length; j++) {
-						newArr.push(ar[i][j]);
+					for (var j = 0; j < arr[i].length; j++) {
+						newArr.push(arr[i][j]);
 					}
 				}
 			}
-			var res = [];
-			var json = {};
+			var result = [];
+			var col = {};
 			for (var i = 0; i < newArr.length; i++) {
-				if (!json[newArr[i]]) {
-					res.push(newArr[i]);
-					json[newArr[i]] = 1;
+				if (!col[newArr[i]]) {
+					result.push(newArr[i]);
+					col[newArr[i]] = 1;
 				}
 			}
-			return res;
+			return result;
 }
 module.exports = double_to_one;
